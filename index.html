@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>冥式おみくじ</title>
+  <style>
+    body {
+      font-family: "Noto Serif TC", serif;
+      background-color: #fffaf5;
+      color: #333;
+      text-align: center;
+      padding: 2em;
+    }
+    .shrine {
+      font-size: 3em;
+    }
+    .title {
+      font-size: 2em;
+      margin: 0.5em 0 1em;
+      color: #c71585;
+    }
+    .omikuji-box {
+      background: #fff0f5;
+      border-radius: 1em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 2em;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 0.6em 1.2em;
+      border: none;
+      background-color: #f4a7b9;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e68a9e;
+    }
+    .result {
+      white-space: pre-wrap;
+      margin-top: 2em;
+      font-size: 1.1em;
+      line-height: 1.8em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="shrine">⛩️</div>
+  <div class="title">🌸冥式おみくじ🌸</div>
+  <button onclick="drawFortune()">抽一籤！</button>
+  <div class="omikuji-box">
+    <div id="result" class="result">今日の籤はまだ降りてきていません。</div>
+  </div>
+  
+  <script>
+    const fortunes = [
+      "🌸 冥式おみくじ（No.001）🌸\n運勢：大吉 ✨\n今天是「溫柔的堅定」的一天。你比昨天更值得自己誇獎。\n\n運氣の詳細：\n戀愛：默默的心意也會傳達，無需急於行動。\n工作・學習：努力會被看見，即使還沒有人說出口。\n健康：放鬆與深呼吸，是今天給自己的溫柔。\n金錢：小小節約會帶來長遠的安心感。\n\n🍀 願今天，也是你心中小小驕傲悄然點亮的一天。",
+      "🌸 冥式おみくじ（No.002）🌸\n運勢：中吉 ✨\n今天是「柔光中的決意」的一天。你正一步步照亮未來。\n\n運氣の詳細：\n戀愛：默默的心意也會傳達，無需急於行動。\n工作・學習：努力會被看見，即使還沒有人說出口。\n健康：放鬆與深呼吸，是今天給自己的溫柔。\n金錢：小小節約會帶來長遠的安心感。\n\n🍀 願你今天的柔軟與堅持，靜靜地在心中扎根。"
+      // 可以依需要補上其餘籤詩
+    ];
+
+    function drawFortune() {
+      const result = document.getElementById("result");
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      result.textContent = fortunes[randomIndex];
+    }
+  </script>
+</body>
+</html>
