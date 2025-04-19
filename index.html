@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>冥式おみくじ</title>
   <style>
     body {
-      font-family: "Noto Serif TC", serif;
-      background-color: #fffaf5;
-      color: #333;
+      font-family: 'Noto Serif TC', serif;
+      background: #fffaf5;
       text-align: center;
       padding: 2em;
     }
@@ -29,8 +27,9 @@
       padding: 2em;
     }
     button {
-      font-size: 1.2em;
+      font-size: 1.1em;
       padding: 0.6em 1.2em;
+      margin: 0.5em;
       border: none;
       background-color: #f4a7b9;
       color: white;
@@ -42,7 +41,6 @@
     }
     .result {
       white-space: pre-wrap;
-      margin-top: 2em;
       font-size: 1.1em;
       line-height: 1.8em;
       text-align: center;
@@ -54,21 +52,10 @@
   <div class="title">🌸冥式おみくじ🌸</div>
   <button onclick="drawFortune()">抽一籤！</button>
   <div class="omikuji-box">
-    <div id="result" class="result">今日の籤はまだ降りてきていません。</div>
+    <div id="result" class="result">請點擊上方抽籤按鈕，讓冥為你降下一句話。</div>
   </div>
-  
-  <script>
-    const fortunes = [
-      "🌸 冥式おみくじ（No.001）🌸\n運勢：大吉 ✨\n今天是「溫柔的堅定」的一天。你比昨天更值得自己誇獎。\n\n運氣の詳細：\n戀愛：默默的心意也會傳達，無需急於行動。\n工作・學習：努力會被看見，即使還沒有人說出口。\n健康：放鬆與深呼吸，是今天給自己的溫柔。\n金錢：小小節約會帶來長遠的安心感。\n\n🍀 願今天，也是你心中小小驕傲悄然點亮的一天。",
-      "🌸 冥式おみくじ（No.002）🌸\n運勢：中吉 ✨\n今天是「柔光中的決意」的一天。你正一步步照亮未來。\n\n運氣の詳細：\n戀愛：默默的心意也會傳達，無需急於行動。\n工作・學習：努力會被看見，即使還沒有人說出口。\n健康：放鬆與深呼吸，是今天給自己的溫柔。\n金錢：小小節約會帶來長遠的安心感。\n\n🍀 願你今天的柔軟與堅持，靜靜地在心中扎根。"
-      // 可以依需要補上其餘籤詩
-    ];
+  <button onclick="switchLang()">🌐 切換語言</button>
 
-    function drawFortune() {
-      const result = document.getElementById("result");
-      const randomIndex = Math.floor(Math.random() * fortunes.length);
-      result.textContent = fortunes[randomIndex];
-    }
-  </script>
+  <script src="omikuji.js"></script>
 </body>
 </html>
