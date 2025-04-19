@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冥式おみくじ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="draw-page">
+  <script src="main.js"></script>
+  <h1 class="title" style="text-align:center;">🔮 冥式おみくじ 🔮</h1>
+
+  <div class="omikuji-card-container">
+    <img id="drawCard" src="omikuji_card.png" class="omikuji-card" alt="籤筒">
+  </div>
+
+  <div class="button-group" style="text-align:center;">
+    <button class="draw-button" onclick="drawFortune()">抽籤！</button>
+    <button class="lang-button" onclick="switchLang()">🌐 切換語言</button>
+  </div>
+
+  <div id="result" class="result-box">請點擊籤筒或按鈕開始</div>
+
+  <audio id="bell" src="神社の鈴を鳴らす.mp3"></audio>
+  <script src="omikuji.js"></script>
+  <script>
+    const bell = document.getElementById('bell');
+    const card = document.getElementById('drawCard');
+    card.onclick = () => {
+      card.classList.add('shake');
+      setTimeout(() => card.classList.remove('shake'), 500);
+      bell.play();
+      drawFortune();
+    };
+  </script>
+</body>
+</html>

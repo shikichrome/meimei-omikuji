@@ -1,0 +1,116 @@
+/* 桜を表示するコンテナのスタイル */
+.cherry-blossom-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 桜の花びらのスタイル */
+.petal {
+  position: absolute;
+  background-color: #ffc0cb;
+  border-radius: 150% 0 150% 0;
+  animation: animate-petal 10s linear;
+}
+
+.petal::after {
+  content: "";
+  position: absolute;
+  top: -14%;
+  left: -10%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffc0cb;
+  border-radius: 150% 0 150% 0;
+  transform: rotate(15deg);
+}
+
+/* 花びらが降るアニメーション */
+@keyframes animate-petal {
+  0% {
+    top: 0;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100vh;
+    transform: rotate(3000deg);
+  }
+}
+
+#enterBtn {
+  display: inline-block;
+  padding: 1em 2.5em;
+  font-size: 1.5em;
+  background-color: #f4a7b9;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+#enterBtn:hover {
+  background-color: #e68a9e;
+}
+
+.omikuji-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.omikuji-card {
+  width: 200px;
+  max-width: 90%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.button-group {
+  margin-top: 1.5em;
+}
+.draw-button {
+  background-color: #c71585;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  padding: 0.8em 2em;
+  margin: 0.5em;
+  border-radius: 10px;
+}
+.result-box {
+  margin: 2em auto;
+  max-width: 90%;
+  border: 2px dotted #c71585;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: 1.1em;
+  background: #fff;
+  color: #333;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.lang-button {
+  background-color: #ffaad4;
+  color: white;
+  font-size: 1.1em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  margin-left: 0.5em;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.lang-button:hover {
+  background-color: #f78fb3;
+}
