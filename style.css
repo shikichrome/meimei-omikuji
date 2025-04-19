@@ -114,3 +114,15 @@
 .lang-button:hover {
   background-color: #f78fb3;
 }
+
+/* 櫻花用的 .petal 已存在 */
+.shake-sway {
+  animation: sway 0.5s ease-in-out;
+}
+@keyframes sway {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}

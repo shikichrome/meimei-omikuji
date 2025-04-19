@@ -11,7 +11,7 @@
   <h1 class="title" style="text-align:center;">🔮 冥式おみくじ 🔮</h1>
 
   <div class="omikuji-card-container">
-    <img id="drawCard" src="omikuji_card.png" class="omikuji-card" alt="籤筒">
+    <img id="drawCard" src="omikuji_card.png" class="omikuji-card shakeable" alt="籤筒">
   </div>
 
   <div class="button-group" style="text-align:center;">
@@ -27,8 +27,8 @@
     const bell = document.getElementById('bell');
     const card = document.getElementById('drawCard');
     card.onclick = () => {
-      card.classList.add('shake');
-      setTimeout(() => card.classList.remove('shake'), 500);
+      card.classList.add('shake-sway');
+      setTimeout(() => card.classList.remove('shake-sway'), 500);
       bell.play();
       drawFortune();
     };
