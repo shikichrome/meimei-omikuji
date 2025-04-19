@@ -19,5 +19,15 @@
       setTimeout(() => location.href='draw.html', 1800);
     };
   </script>
+  
+  <audio id="bgm" src="bgm.wav" loop></audio>
+
+<script>
+  const bgm = document.getElementById('bgm');
+  window.addEventListener('click', () => {
+    bgm.play();
+  }, { once: true });
+</script>
+
 </body>
 </html>
